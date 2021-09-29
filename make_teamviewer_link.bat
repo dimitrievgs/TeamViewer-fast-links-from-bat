@@ -17,18 +17,18 @@ set LF=^
 
 setlocal EnableDelayedExpansion
 if %bitness_nr% geq 0 if %bitness_nr% leq 1 goto give_name
-set /p bitness_nr="What is your TemViewer's bitness? (0 = x64, 1 = x86) !LF!"
+set /p bitness_nr="What is your TeamViewer's bitness? (0 = x64, 1 = x86) !LF!"
 goto select_bitness
 
 :give_name
 
-set /p pc_name="Remote computer name (for link name)?!LF!"
-set /p pc_id="Remote computer id?!LF!"
-set /p pc_pass="Remote computer password (in TeamViewer app)?!LF!"
+set /p pc_name="Remote computer's name (for link name)?!LF!"
+set /p pc_id="Remote computer's id?!LF!"
+set /p pc_pass="Remote computer's password (in TeamViewer app)?!LF!"
 
 :create_script
 
-call echo link's bitness will be %%bitness_list[%bitness_nr%]%% 
+:: call echo link's bitness will be %%bitness_list[%bitness_nr%]%% 
 
 set tv_folder=""
 IF %bitness_nr%==1 (
